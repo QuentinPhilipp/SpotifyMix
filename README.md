@@ -7,11 +7,11 @@ Click on the log in button and do the authentication process on Spotify page.
 ![Login](https://github.com/QuentinPhilipp/SpotifyMix/blob/main/README/login.png)
 
 ## Give a name for the playlist
-Just enter a name to find your playlist.
+Just enter a name for your new collaborative playlist.
 \
 ![Name the playlist](https://github.com/QuentinPhilipp/SpotifyMix/blob/main/README/name.png)
 
 ## Share the playlist to your friend
-Scan the Spotify Code or click to copy the link and send it to your friends. When other users joins the playlists, they have the permission to edit it.
+Scan the Spotify Code or click on the code to copy a link and send it to your friends. When other users joins the playlists, they have the permission to edit it.
 \
 ![Share](https://github.com/QuentinPhilipp/SpotifyMix/blob/main/README/share.png)
