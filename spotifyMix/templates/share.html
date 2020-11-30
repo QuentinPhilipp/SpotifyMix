@@ -24,10 +24,28 @@
       <p>Playlist ID : {{playlistID}}</p> -->
       <!-- <p>Playlist external URL : {{playlistExternalURI}}</p> -->
 
+      <script type="text/javascript">
+        function setClipboard(value) {
+          // Create an hidden element to copy the value from it
+            var tempInput = document.createElement("input");
+            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+            tempInput.value = value;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
 
-      <div class="spotify-code-wrapper">
+            var text = document.getElementById("info-text-2");
+            text.innerHTML="Link copied to your clipboard!";
+
+        }
+      </script>
+
+
+      <div class="spotify-code-wrapper" onclick="setClipboard('{{playlistExternalURI}}')">
         <img class="spotify-code" src="https://scannables.scdn.co/uri/plain/svg/2E3532/white/850/{{playlistURI}}" alt="">
-        <p class="spotify-code-text">Scan this code on your Spotify mobile App in the "Search" menu</p>
+        <p class="spotify-code-text" id="info-text-1">Scan this code on your Spotify mobile App in the "Search" menu</p>
+        <p class="spotify-code-text" id="info-text-2">or click on the code to copy the link in your clipboard</p>
       </div>
 
     </div>
