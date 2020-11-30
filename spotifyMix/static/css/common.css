@@ -1,0 +1,24 @@
+html, body {
+  overflow-y:hidden;
+  height:100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.container {
+  padding:10px;
+  text-align: center;
+}
+.title {
+  font-size: 8vw;
+  color: #DBD2E0;
+  margin-bottom: 50px;
+}

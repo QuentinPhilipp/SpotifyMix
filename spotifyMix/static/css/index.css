@@ -1,0 +1,23 @@
+
+
+
+.spotify-login {
+  background-color: #1ED760;
+  height: 55px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-radius: 10px;
+}
+
+.icon,
+.text {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.text {
+  margin-left: 3px;
+  color: white;
+}
