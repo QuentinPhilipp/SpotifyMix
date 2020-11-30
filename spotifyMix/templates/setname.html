@@ -23,6 +23,16 @@
       <form class="form-name" action="/setname" method="post">
         <input type="text" class="form-input" name="playlistName" value="" placeholder="Playlist Name" required="">
       </form>
+      <h1 class="title">
+        Or select a playlist that you want to edit
+      </h1>
+      <div class="custom-select" style="width:200px;">
+        <select>
+          {%for i in range(0, len)%}
+              <option value="{{playlists[i]['id']}}">{{playlists[i]["name"]}}</option>
+          {%endfor%}
+        </select>
+      </div>
     </div>
   </body>
   <style>

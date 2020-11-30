@@ -59,7 +59,7 @@ def loginSpotify():
         sp = spotipy.Spotify(auth=token)
         print("Token for user : ",token)
         session["token"] = token
-        
+
         return redirect(url_for("main_bp.setNamePage"))
     else:
         print("Can't get token for", username)
@@ -75,7 +75,23 @@ def home():
 
 @main_bp.route('/setname', methods=['GET'])
 def setNamePage():
-    return render_template("setname.html")
+    sp = spotipy.Spotify(auth=session["token"])
+
+    playlistsObjects = []
+
+    # Get all playlists from user
+    playlists = sp.user_playlists(sp.current_user()["id"])
+    while playlists:
+        for i, playlist in enumerate(playlists['items']):
+            name = playlist['name']
+            id = playlist['id']
+            playlistsObjects.append({"id":id,"name":name})
+        if playlists['next']:
+            playlists = sp.next(playlists)
+        else:
+            playlists = None
+
+    return render_template("setname.html",playlists=playlistsObjects,len=len(playlistsObjects))
 
 @main_bp.route('/setname', methods=['POST'])
 def setName():
